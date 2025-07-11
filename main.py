@@ -3,13 +3,17 @@ import os
 from content_generator import generate_post
 
 def post_to_channel():
+    print("📌 Генерация контента...")
     content = generate_post()
+
     if not content:
         print("[!] Контент не сгенерирован")
         return
 
+    print("📌 Инициализация бота...")
     bot = Bot(token=os.environ['TELEGRAM_BOT_TOKEN'])
 
+    print("📌 Попытка отправки поста...")
     try:
         with open(content['image'], 'rb') as photo:
             bot.send_photo(
