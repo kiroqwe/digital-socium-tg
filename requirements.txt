@@ -1,0 +1,5 @@
+pandas
+matplotlib
+pytrends
+python-telegram-bot
+requests
